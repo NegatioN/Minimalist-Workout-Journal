@@ -2,14 +2,16 @@ from requests import auth, get, post
 import json
 import argparse
 import os
+from datetime import date
+import re
+from pprint import pprint
 
-#TODO get exercises, confirm mappings
-#TODO make mappings-file
 #TODO make parser of format p,2x5+3.3kg;1x3
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--mapping_dest', default="mappings.json", dest="mapping_dest", help='Path to save mapping-file to.', required=True)
+parser.add_argument('--mapping_dest', default="mappings.json", dest="mapping_dest", help='Path to save mapping-file to.')
 parser.add_argument('--token', dest="token", help='Auth token for your account.', required=True)
+parser.add_argument('--workout', dest="workout", help='Workout-id for the workout-program you want to assign the workouts to.')
 config = parser.parse_args()
 
 API_URL = "https://wger.de/api/v2"
@@ -20,18 +22,33 @@ class MyAuth(auth.AuthBase):
         r.headers['Authorization'] = "Token {}".format(config.token)
         return r
 
-def get_api(endpoint, action, options=""):
+
+
+def define_call_url(action, endpoint, options):
     call_url = "{}/{}".format(API_URL, endpoint)
     if action and action != "":
         call_url = "{}/{}".format(call_url, action)
     if options and options != "":
         call_url = "{}{}".format(call_url, options)
+    return call_url
+
+
+def get_api(endpoint, action="", options=""):
+    call_url = define_call_url(action, endpoint, options)
     res = get(call_url, auth=MyAuth())
 
     if res.status_code == 200:
         return json.loads(res.content)
     else:
         return {}
+
+
+def post_api(endpoint, data, action="", options=""):
+    call_url = define_call_url(action, endpoint, options)
+    headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
+    print(data)
+    res = post(call_url, json=data, auth=MyAuth(), headers=headers)
+    print(res.status_code)
 
 
 def get_exercises():
@@ -41,6 +58,45 @@ def get_exercises():
 def get_workout(workout_id):
     return get_api(endpoint="set", action=workout_id, options="/add")
 
+def post_workoutlog(reps, weight, exercise, workout_id, wrk_date=date.today()):
+    post_data = {
+        "reps": reps,
+        "weight": float(weight),
+        "date": str(wrk_date),
+        "exercise": exercise,
+        "workout": workout_id,
+        "repetition_unit": 1,
+        "weight_unit": 1
+    }
+    post_api(endpoint="workoutlog/", data=post_data, options="", action="") # needs trailing /, base redirects.
+
+def output_to_tuple(value, expected_tuple_num=2):
+    output = ()
+    try:
+        for i in range(expected_tuple_num):
+            output += (value[i],)
+    except:
+        pass
+    return output
+
+def split_get_parts(text, sep, exp_parts=2):
+    return output_to_tuple(re.compile(sep).split(text), expected_tuple_num=exp_parts)
+
+
+def parse_user_input(text):
+    exercise_shortcut, rest = split_get_parts(text, sep=",")
+    sets, rest = split_get_parts(rest, sep=";")
+    for set in sets:
+        print(set)
+        set_split = re.compile("x+-").split(text)
+        set_num = set_split[0]
+        rep_num = set_split[1]
+        weight_num = set_split[2] if set_split[2] else 0
+        #set_num, rep_num, weight_num = split_get_parts(set, "x+-", exp_parts=3)
+        print(set_num, rep_num, weight_num)
+    print(exercise_shortcut)
+    print(sets)
+    print(rest)
 
 def generate_mappings(exercises):
     mapping = {}
@@ -67,4 +123,7 @@ if not os.path.isfile(config.mapping_dest):
     exercises = get_exercises()
     save_mappings(generate_mappings(exercises), config.mapping_dest)
 
-
+#exercises = get_exercises()
+#print(exercises)
+#post_workoutlog(reps=5, weight=122.0, workout_id=121764, exercise=192)
+parse_user_input("s,1x5+27;")
