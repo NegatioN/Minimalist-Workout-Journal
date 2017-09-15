@@ -3,6 +3,7 @@
 import re
 from pprint import pprint
 
+
 class Parser:
     def __init__(self, exercise_date, workout_id, mappings):
         self.exercise_date = exercise_date
