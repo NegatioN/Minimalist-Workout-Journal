@@ -16,7 +16,7 @@ def split_get_parts(text, sep, exp_parts=2):
 
 
 def split_sets(text):
-    split_text = re.compile(";").split(text)
+    return re.compile("[;]").split(text)
 
 def grab_set_weight(text):
     split_text = re.compile("(\+|-)").split(text)
