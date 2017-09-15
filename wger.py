@@ -1,16 +1,20 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8
+
 from requests import auth, get, post
 import json
 import argparse
 import os
 from datetime import date
-import re
+import input_parser
+
 from pprint import pprint
 
 #TODO make parser of format p,2x5+3.3kg;1x3
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--mapping_dest', default="mappings.json", dest="mapping_dest", help='Path to save mapping-file to.')
-parser.add_argument('--token', dest="token", help='Auth token for your account.', required=True)
+parser.add_argument('--token', dest="token", help='Auth token for your account.')#, required=True)
 parser.add_argument('--workout', dest="workout", help='Workout-id for the workout-program you want to assign the workouts to.')
 config = parser.parse_args()
 
@@ -70,33 +74,6 @@ def post_workoutlog(reps, weight, exercise, workout_id, wrk_date=date.today()):
     }
     post_api(endpoint="workoutlog/", data=post_data, options="", action="") # needs trailing /, base redirects.
 
-def output_to_tuple(value, expected_tuple_num=2):
-    output = ()
-    try:
-        for i in range(expected_tuple_num):
-            output += (value[i],)
-    except:
-        pass
-    return output
-
-def split_get_parts(text, sep, exp_parts=2):
-    return output_to_tuple(re.compile(sep).split(text), expected_tuple_num=exp_parts)
-
-
-def parse_user_input(text):
-    exercise_shortcut, rest = split_get_parts(text, sep=",")
-    sets, rest = split_get_parts(rest, sep=";")
-    for set in sets:
-        print(set)
-        set_split = re.compile("x+-").split(text)
-        set_num = set_split[0]
-        rep_num = set_split[1]
-        weight_num = set_split[2] if set_split[2] else 0
-        #set_num, rep_num, weight_num = split_get_parts(set, "x+-", exp_parts=3)
-        print(set_num, rep_num, weight_num)
-    print(exercise_shortcut)
-    print(sets)
-    print(rest)
 
 def generate_mappings(exercises):
     mapping = {}
@@ -126,4 +103,4 @@ if not os.path.isfile(config.mapping_dest):
 #exercises = get_exercises()
 #print(exercises)
 #post_workoutlog(reps=5, weight=122.0, workout_id=121764, exercise=192)
-parse_user_input("s,1x5+27;")
+#parse_user_input("s,1x5+27;")
