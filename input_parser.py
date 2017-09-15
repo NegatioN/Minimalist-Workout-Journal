@@ -2,24 +2,15 @@
 # -*- coding: utf-8
 import re
 
-def output_to_tuple(value, expected_tuple_num=2):
-    output = ()
-    try:
-        for i in range(expected_tuple_num):
-            output += (value[i],)
-    except:
-        pass
-    return output
-
-def split_get_parts(text, sep, exp_parts=2):
-    return output_to_tuple(re.compile(sep).split(text), expected_tuple_num=exp_parts)
-
+def split_exercises(full_text):
+    return re.compile("[;]").split(full_text)
 
 def split_sets(text):
-    return re.compile("[;]").split(text)
+    return re.compile("[']").split(text)
 
-def grab_set_weight(text):
-    split_text = re.compile("(\+|-)").split(text)
+
+def grab_set_weight(set_text):
+    split_text = re.compile("(\+|-)").split(set_text)
     if len(split_text) < 2:
         return 0
     else:
@@ -27,7 +18,14 @@ def grab_set_weight(text):
         return modifier * int(split_text[len(split_text)-1])
 
 
+def split_exercise_and_set(exercise_and_set_text):
+    split_text = re.compile("[,]").split(exercise_and_set_text)
+    return split_text[0], split_text[1]
+
+
+
 def parse_user_input(text):
+    
     exercise_shortcut, rest = split_get_parts(text, sep=",")
     sets, rest = split_get_parts(rest, sep=";")
     for set in sets:
