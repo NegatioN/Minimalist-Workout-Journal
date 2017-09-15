@@ -1,18 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8
 import re
-import json
 from pprint import pprint
 
-mappings = {}
-with open("mappings.json", "r") as map_file:
-    mappings = json.load(map_file)
-
-
 class Parser:
-    def __init__(self, exercise_date, workout_id):
+    def __init__(self, exercise_date, workout_id, mappings):
         self.exercise_date = exercise_date
         self.workout_id = workout_id
+        self.mappings = mappings
 
     def parse_user_input(self, text):
         set_list = []
@@ -31,9 +26,8 @@ class Parser:
                                                            workout_id=self.workout_id))
         pprint(set_list)
 
-    @staticmethod
-    def get_mapping_id(exercise_shortcut):
-        return mappings[exercise_shortcut]["id"] if mappings[exercise_shortcut] else 1
+    def get_mapping_id(self, exercise_shortcut):
+        return self.mappings[exercise_shortcut]["id"] if self.mappings[exercise_shortcut] else 1
 
     @staticmethod
     def split_exercises(full_text):
