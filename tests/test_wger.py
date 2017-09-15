@@ -7,11 +7,11 @@ from datetime import date
 
 @pytest.fixture()
 def stateful_parser():
-    return Parser(exercise_date=date.today(), workout_id=5)
+    return Parser(exercise_date=date.today(), workout_id=5, mappings={"p": {"name": "pushup", "id": 1},
+                                                                      "s": {"name": "squat", "id": 2}})
 
 
 class TestWger(object):
-
     @pytest.mark.parametrize("text", ["3x5+1"])
     def test_grab_set_weight_positive(self, text, stateful_parser):
         assert stateful_parser.grab_set_weight(text) > 0
@@ -54,3 +54,12 @@ class TestWger(object):
         sets = int(complete_text.split("x")[0]) if len(complete_text.split("x")) > 1 else 1
         assert answer[0] is sets and answer[1] is reps
 
+    def test_parse_user_input(self, stateful_parser):
+        expected_output = [{'date': str(date.today()),
+                            'exercise': 2,
+                            'repetition_unit': 1,
+                            'reps': 5,
+                            'weight': 27.0,
+                            'weight_unit': 1,
+                            'workout': 5}]
+        assert stateful_parser.parse_user_input("s,1x5+27") == expected_output

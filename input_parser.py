@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8
 import re
-from pprint import pprint
 
 
 class Parser:
@@ -25,7 +24,7 @@ class Parser:
                                                            reps=reps,
                                                            date=self.exercise_date,
                                                            workout_id=self.workout_id))
-        pprint(set_list)
+        return set_list
 
     def get_mapping_id(self, exercise_shortcut):
         return self.mappings[exercise_shortcut]["id"] if self.mappings[exercise_shortcut] else 1

@@ -31,10 +31,7 @@ class WgerAPI:
     def get_api(self, endpoint, action="", options=""):
         call_url = self.make_my_call_url(action, endpoint, options)
         res = get(call_url, auth=self.auth)
-        if res.status_code == 200:
-            return json.loads(res.content)
-        else:
-            return {}
+        return json.loads(res.content) if res.status_code == 200 else {}
 
     def post_api(self, endpoint, data, action="", options=""):
         call_url = self.make_my_call_url(action, endpoint, options)
@@ -45,5 +42,5 @@ class WgerAPI:
         return self.get_api(endpoint="exercise", options="?limit=1000&language=2")["results"]
 
     def post_workoutlog(self, workoutlog_set_data):
-        # needs trailing /, base redirects.
+        # needs trailing /, base redirects, and gives us a get-call instead.
         self.post_api(endpoint="workoutlog/", data=workoutlog_set_data, options="", action="")
