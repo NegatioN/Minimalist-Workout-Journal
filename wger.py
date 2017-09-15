@@ -103,4 +103,4 @@ if not os.path.isfile(config.mapping_dest):
 #exercises = get_exercises()
 #print(exercises)
 #post_workoutlog(reps=5, weight=122.0, workout_id=121764, exercise=192)
-#parse_user_input("s,1x5+27;")
+pprint(input_parser.parse_user_input("s,1x5+27;p,17;c,2x5'1x8"))
