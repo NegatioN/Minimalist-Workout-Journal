@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8
 import re
+import wger_data_defs as wdata
 
 
 class Parser:
@@ -19,7 +20,7 @@ class Parser:
                 remaining_set_text = self.split_weight_and_set(set)[0]
                 set_num, reps = self.grab_set_and_reps(remaining_set_text)
                 for i in range(set_num):
-                    set_list.append(self.create_set_object(exercise_id=exercise_id,
+                    set_list.append(wdata.create_set_object(exercise_id=exercise_id,
                                                            weight=weight,
                                                            reps=reps,
                                                            date=self.exercise_date,
@@ -60,13 +61,3 @@ class Parser:
     def split_exercise_and_set(exercise_and_set_text):
         split_text = re.compile("[,]").split(exercise_and_set_text)
         return split_text[0], split_text[1]
-
-    @staticmethod
-    def create_set_object(exercise_id, reps, weight, date, workout_id=121764):
-        return {"reps": reps,
-                "weight": weight,
-                "exercise": exercise_id,
-                "workout": workout_id,
-                "repetition_unit": 1,
-                "weight_unit": 1,
-                "date": str(date)}

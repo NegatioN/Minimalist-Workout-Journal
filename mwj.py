@@ -7,6 +7,7 @@ from datetime import date
 from input_parser import Parser
 from wger_api import WgerAPI
 import logging
+import wger_data_defs as wdata
 
 
 arg_parser = argparse.ArgumentParser()
@@ -59,18 +60,6 @@ def get_mappings(api, mapping_dest_path):
     return mappings
 
 
-#TODO add a way to say something about how the workout went to graph form better later.
-def create_workout_session(session_date, workout_id):
-    return {
-        "date": str(session_date),
-        "notes": "",
-        "impression": "1",
-        "time_start": None,
-        "time_end": None,
-        "workout": workout_id
-    }
-
-
 def main():
     api = WgerAPI(config.token)
     mappings = get_mappings(api, config.mapping_dest)
@@ -81,7 +70,7 @@ def main():
 
     workout_days = [x["date"] for x in api.get_workoutsessions()]
     if not str(config.exr_date) in workout_days:
-        session_data = create_workout_session(config.exr_date, config.workout)
+        session_data = wdata.create_workout_session(config.exr_date, config.workout)
         api.post_workoutsession(session_data)
         logging.info("Created a new workout-session for {}".format(str(config.exr_date)))
 
