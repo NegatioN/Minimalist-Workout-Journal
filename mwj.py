@@ -80,7 +80,7 @@ def main():
     sets_to_post = input_parser.parse_user_input(config.inp)
 
     workout_days = [x["date"] for x in api.get_workoutsessions()]
-    if not str(date.today()) in workout_days:
+    if not str(config.exr_date) in workout_days:
         session_data = create_workout_session(config.exr_date, config.workout)
         api.post_workoutsession(session_data)
         logging.info("Created a new workout-session for {}".format(str(config.exr_date)))
