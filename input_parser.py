@@ -3,6 +3,12 @@
 import re
 import wger_data_defs as wdata
 
+EXR_SET_REGEX = re.compile("[,]")
+SET_REP_REGEX = re.compile("[x]")
+WEIGHT_SET_REGEX = re.compile("(\+|-)")
+SET_REGEX = re.compile("[']")
+EXRS_REGEX = re.compile("[;]")
+
 
 class Parser:
     def __init__(self, exercise_date, workout_id, mappings):
@@ -21,10 +27,10 @@ class Parser:
                 set_num, reps = self.grab_set_and_reps(remaining_set_text)
                 for i in range(set_num):
                     set_list.append(wdata.create_set_object(exercise_id=exercise_id,
-                                                           weight=weight,
-                                                           reps=reps,
-                                                           date=self.exercise_date,
-                                                           workout_id=self.workout_id))
+                                                            weight=weight,
+                                                            reps=reps,
+                                                            date=self.exercise_date,
+                                                            workout_id=self.workout_id))
         return set_list
 
     def get_mapping_id(self, exercise_shortcut):
@@ -32,15 +38,15 @@ class Parser:
 
     @staticmethod
     def split_exercises(full_text):
-        return re.compile("[;]").split(full_text)
+        return EXRS_REGEX.split(full_text)
 
     @staticmethod
     def split_sets(text):
-        return re.compile("[']").split(text)
+        return SET_REGEX.split(text)
 
     @staticmethod
     def split_weight_and_set(one_set_text):
-        return re.compile("(\+|-)").split(one_set_text)
+        return WEIGHT_SET_REGEX.split(one_set_text)
 
     def grab_set_weight(self, one_set_text):
         split_text = self.split_weight_and_set(one_set_text)
@@ -52,12 +58,12 @@ class Parser:
 
     @staticmethod
     def grab_set_and_reps(one_set_text):
-        split_text = re.compile("[x]").split(one_set_text)
+        split_text = SET_REP_REGEX.split(one_set_text)
         if len(split_text) == 1:
             split_text = ["1"] + split_text
         return int(split_text[0]), int(split_text[1])
 
     @staticmethod
     def split_exercise_and_set(exercise_and_set_text):
-        split_text = re.compile("[,]").split(exercise_and_set_text)
+        split_text = EXR_SET_REGEX.split(exercise_and_set_text)
         return split_text[0], split_text[1]
