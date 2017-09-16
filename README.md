@@ -1,5 +1,5 @@
 # Minimalist Workout Journal
-Hi, I love stats of my workouts, but I hate spending time meticulously
+I love stats of my workouts, but I hate spending time meticulously
 filling them in by hand to then add them to some sort of webpage again later.
 
 I figured it could be written more succintly, since my workouts don't change every time, and it usually follows a pattern.
