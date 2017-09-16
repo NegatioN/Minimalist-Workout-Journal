@@ -1,6 +1,7 @@
-from requests import auth, get, post
+from requests import auth, get, post, delete
 import json
 import functools
+from collections import defaultdict
 
 API_URL = "https://wger.de/api/v2"
 
@@ -31,9 +32,10 @@ class WgerAPI:
     def get_api(self, endpoint, action="", options=""):
         call_url = self.make_my_call_url(action, endpoint, options)
         res = get(call_url, auth=self.auth)
-        return json.loads(res.content) if res.status_code == 200 else {}
+        return json.loads(res.content) if res.status_code == 200 else defaultdict(list)
 
     def post_api(self, endpoint, data, action="", options=""):
+        # needs trailing /, base redirects, and gives us a get-call instead.
         call_url = self.make_my_call_url(action, endpoint, options)
         headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
         post(call_url, json=data, auth=self.auth, headers=headers)
@@ -42,5 +44,17 @@ class WgerAPI:
         return self.get_api(endpoint="exercise", options="?limit=1000&language=2")["results"]
 
     def post_workoutlog(self, workoutlog_set_data):
-        # needs trailing /, base redirects, and gives us a get-call instead.
-        self.post_api(endpoint="workoutlog/", data=workoutlog_set_data, options="", action="")
+        self.post_api(endpoint="workoutlog/", data=workoutlog_set_data)
+
+    def get_workoutlog(self):
+        return self.get_api(endpoint="workoutlog/")["results"]
+
+    def delete_workoutlog(self, id, action="", options=""):
+        endpoint="workoutlog/{}".format(id)
+        delete(self.make_my_call_url(action, endpoint, options), auth=self.auth)
+
+    def get_workoutsessions(self):
+        return self.get_api("workoutsession", options="?limit=9999")["results"]
+
+    def post_workoutsession(self, session_data):
+        self.post_api(endpoint="workoutsession/", data=session_data)

@@ -13,10 +13,11 @@ arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument('--mapping_dest', default="mappings.json", dest="mapping_dest",
                         help='Path to save mapping-file to.')
 arg_parser.add_argument('--token', dest="token", help='Auth token for your account.', required=True)
+arg_parser.add_argument('--input', dest="inp", help='input to parse', required=True)
 arg_parser.add_argument('--loglevel', dest="loglevel", help='Which level to log', default=logging.INFO,
                         choices=[logging.INFO, logging.WARN, logging.DEBUG])
 arg_parser.add_argument('--date', dest="exr_date", default=date.today(), help='Date to add the given exercise to.')
-arg_parser.add_argument('--workout', dest="workout",
+arg_parser.add_argument('--workout', dest="workout", default=121764,
                         help='Workout-id for the workout-program you want to assign the workouts to.')
 config = arg_parser.parse_args()
 
@@ -58,13 +59,36 @@ def get_mappings(api, mapping_dest_path):
     return mappings
 
 
+#TODO add a way to say something about how the workout went to graph form better later.
+def create_workout_session(session_date, workout_id):
+    return {
+        "date": str(session_date),
+        "notes": "",
+        "impression": "1",
+        "time_start": None,
+        "time_end": None,
+        "workout": workout_id
+    }
+
+
 def main():
     api = WgerAPI(config.token)
     mappings = get_mappings(api, config.mapping_dest)
     input_parser = Parser(exercise_date=config.exr_date,
                           mappings=mappings,
-                          workout_id=121764)
-    sets_to_post = input_parser.parse_user_input("s,1x5+27;p,17;c,2x5'1x8")
+                          workout_id=config.workout)
+    sets_to_post = input_parser.parse_user_input(config.inp)
+
+    workout_days = [x["date"] for x in api.get_workoutsessions()]
+    if not str(date.today()) in workout_days:
+        session_data = create_workout_session(config.exr_date, config.workout)
+        api.post_workoutsession(session_data)
+        logging.info("Created a new workout-session for {}".format(str(config.exr_date)))
+
+    for set_data in sets_to_post:
+        api.post_workoutlog(set_data)
+
+    logging.info("Posted {} sets of your workout to wger.de!".format(len(sets_to_post)))
 
 
 if __name__ == "__main__":
