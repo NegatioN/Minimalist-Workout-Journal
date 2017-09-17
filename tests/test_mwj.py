@@ -11,7 +11,7 @@ def stateful_parser():
                                                                       "s": {"name": "squat", "id": 2}})
 
 
-class TestWger(object):
+class TestMWJ(object):
     @pytest.mark.parametrize("text", ["3x5+1"])
     def test_grab_set_weight_positive(self, text, stateful_parser):
         assert stateful_parser.grab_set_weight(text) > 0

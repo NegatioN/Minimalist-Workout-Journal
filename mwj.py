@@ -18,8 +18,6 @@ arg_parser.add_argument('--input', dest="inp", help='input to parse', required=T
 arg_parser.add_argument('--loglevel', dest="loglevel", help='Which level to log', default=logging.INFO,
                         choices=[logging.INFO, logging.WARN, logging.DEBUG])
 arg_parser.add_argument('--date', dest="exr_date", default=date.today(), help='Date to add the given exercise to.')
-arg_parser.add_argument('--workout', dest="workout", default=121764,
-                        help='Workout-id for the workout-program you want to assign the workouts to.')
 config = arg_parser.parse_args()
 
 logging.basicConfig(level=config.loglevel)
@@ -60,19 +58,31 @@ def get_mappings(api, mapping_dest_path):
     return mappings
 
 
+def get_workout_id(api, exercise_date):
+    workouts = api.get_workouts()
+    if not str(exercise_date) in [x["creation_date"] for x in workouts]:
+        workout_id = api.post_workout()["id"]
+        session_data = wdata.create_workout_session(exercise_date, workout_id)
+        api.post_workoutsession(session_data)
+        logging.info("Created a new workout-session for {}".format(str(config.exr_date)))
+        return workout_id
+    else:
+        for entry in workouts:
+            if entry["creation_date"] == str(exercise_date):
+                return entry["id"]
+
+
 def main():
     api = WgerAPI(config.token)
     mappings = get_mappings(api, config.mapping_dest)
+
+    workout_id = get_workout_id(api, config.exr_date)
+    logging.debug("Workout id:{}".format(workout_id))
+
     input_parser = Parser(exercise_date=config.exr_date,
                           mappings=mappings,
-                          workout_id=config.workout)
+                          workout_id=workout_id)
     sets_to_post = input_parser.parse_user_input(config.inp)
-
-    workout_days = [x["date"] for x in api.get_workoutsessions()]
-    if not str(config.exr_date) in workout_days:
-        session_data = wdata.create_workout_session(config.exr_date, config.workout)
-        api.post_workoutsession(session_data)
-        logging.info("Created a new workout-session for {}".format(str(config.exr_date)))
 
     for set_data in sets_to_post:
         api.post_workoutlog(set_data)

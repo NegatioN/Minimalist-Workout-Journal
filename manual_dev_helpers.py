@@ -5,3 +5,5 @@ def clean_workoutlog(token):
     worklog_entries = api.get_workoutlog()
     for entry in worklog_entries:
         api.delete_workoutlog(entry["id"])
+
+clean_workoutlog("")

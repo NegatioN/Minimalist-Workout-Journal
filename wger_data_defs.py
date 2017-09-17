@@ -19,3 +19,7 @@ def create_set_object(exercise_id, reps, weight, date, workout_id=121764):
             "repetition_unit": 1,
             "weight_unit": 1,
             "date": str(date)}
+
+
+def create_workout(comment=""):
+    return {"comment": comment}
