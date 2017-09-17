@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8
-import json
 import argparse
-import os
 from datetime import date
 from input_parser import Parser
 from wger_api import WgerAPI
 import logging
 import wger_data_defs as wdata
+from mappings import Mapping
 
 
 arg_parser = argparse.ArgumentParser()
@@ -21,41 +20,6 @@ arg_parser.add_argument('--date', dest="exr_date", default=date.today(), help='D
 config = arg_parser.parse_args()
 
 logging.basicConfig(level=config.loglevel)
-
-
-def generate_mappings(exercises):
-    mapping = {}
-    for ex in exercises:
-        name = ex["name"]
-        if name:
-            name_l = list(name)
-            for i in range(len(name_l)):
-                proposed_binding = "".join(name_l[:i + 1]).lower()
-                cur_ex_names = [v["name"] for k, v in mapping.items()]
-                if proposed_binding not in mapping and name not in cur_ex_names:
-                    nameId = {"name": name, "id": ex["id"]}
-                    mapping[proposed_binding] = nameId
-                    break
-    return mapping
-
-
-def save_mappings(mappings, dest):
-    with open(dest, "w+") as save_file:
-        json.dump(mappings, save_file)
-    logging.info("Saved new mapping-file.")
-
-
-def get_mappings(api, mapping_dest_path):
-    if not os.path.isfile(mapping_dest_path):
-        logging.info("Found no prior mapping-file at {}".format(mapping_dest_path))
-        exercises = api.get_exercises()
-        mappings = generate_mappings(exercises)
-        save_mappings(mappings, mapping_dest_path)
-    else:
-        with open(mapping_dest_path, "r") as map_file:
-            mappings = json.load(map_file)
-        logging.info("Loaded mapping-file from disk.")
-    return mappings
 
 
 def get_workout_id(api, exercise_date):
@@ -74,7 +38,7 @@ def get_workout_id(api, exercise_date):
 
 def main():
     api = WgerAPI(config.token)
-    mappings = get_mappings(api, config.mapping_dest)
+    mappings = Mapping(api=api, mapping_dest_path=config.mapping_dest).get_mappings()
 
     workout_id = get_workout_id(api, config.exr_date)
     logging.debug("Workout id:{}".format(workout_id))
