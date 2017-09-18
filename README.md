@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/NegatioN/Minimalist-Workout-Journal.svg)](https://travis-ci.org/NegatioN/Minimalist-Workout-Journal)
 # Minimalist Workout Journal
 I love stats of my workouts, but I hate spending time meticulously
 filling them in by hand to then add them to some sort of webpage again later.
