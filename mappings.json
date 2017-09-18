@@ -1,1 +1,1034 @@
-{"10m": {"name": "10 Min Abs", "id": 436}, "2hks": {"name": "2 Handed Kettlebell Swing", "id": 345}, "5": {"name": "52", "id": 449}, "a": {"name": "Aalex Gambe Alte al Muro", "id": 350}, "ar": {"name": "Arch Hold", "id": 410}, "arm": {"name": "Arms", "id": 478}, "arn": {"name": "Arnold Shoulder Press", "id": 227}, "ax": {"name": "Axe Hold", "id": 289}, "b": {"name": "Back, Shoulder, And Leg Stretching.", "id": 473}, "ba": {"name": "Barbell Ab Rollout", "id": 343}, "bar": {"name": "Barbell Hack Squats", "id": 407}, "barb": {"name": "Barbell Hip Thrust", "id": 461}, "barbe": {"name": "Barbell Lunges", "id": 405}, "barbel": {"name": "Barbell Triceps Extension", "id": 344}, "barbell": {"name": "Barbell Wrist Curls", "id": 451}, "be": {"name": "Bear Walk", "id": 307}, "ben": {"name": "Bench Press", "id": 192}, "benc": {"name": "Benchpress Dumbbells", "id": 97}, "bench": {"name": "Bench Press Narrow Grip", "id": 88}, "bend": {"name": "Bend\u017e", "id": 247}, "bent": {"name": "Bent High Pulls", "id": 268}, "bent ": {"name": "Bent Over Barbell Row", "id": 412}, "bento": {"name": "Bentover Dumbbell Rows", "id": 362}, "bent-": {"name": "Bent-over Lateral Raises", "id": 421}, "bent o": {"name": "Bent Over Rowing", "id": 109}, "bent ov": {"name": "Bent Over Rowing Reverse", "id": 110}, "bi": {"name": "Biceps Curls With Barbell", "id": 74}, "bic": {"name": "Biceps Curls With Dumbbell", "id": 81}, "bice": {"name": "Biceps Curls With SZ-bar", "id": 80}, "bicep": {"name": "Biceps Curl With Cable", "id": 129}, "bik": {"name": "Biking", "id": 272}, "bo": {"name": "Body Squats", "id": 316}, "bod": {"name": "Body-Ups", "id": 341}, "bou": {"name": "Boulder Circuit", "id": 452}, "br": {"name": "Braced Squat", "id": 342}, "bu": {"name": "Bulgarian Split Squat", "id": 346}, "bur": {"name": "Burpees", "id": 354}, "but": {"name": "Butterfly", "id": 98}, "butt": {"name": "Butterfly Narrow Grip", "id": 99}, "butte": {"name": "Butterfly Reverse", "id": 124}, "c": {"name": "Cable Cross-over", "id": 207}, "ca": {"name": "Cable External Rotation", "id": 265}, "cab": {"name": "Cable Pushdown (with Rope Attachment)", "id": 428}, "cabl": {"name": "Cable Woodchoppers", "id": 167}, "cal": {"name": "Calf Press Using Leg Press Machine", "id": 308}, "calf": {"name": "Calf Raises on Hackenschmitt Machine", "id": 104}, "car": {"name": "Car Push", "id": 290}, "ch": {"name": "Chin-ups", "id": 181}, "chi": {"name": "Chin Ups", "id": 157}, "ci": {"name": "Circuit - Pullups, Pushups, Crunches, Air Squats", "id": 437}, "cl": {"name": "Close-grip Bench Press", "id": 217}, "clo": {"name": "Close-grip Lat Pull Down", "id": 213}, "cr": {"name": "Cross-Bench Dumbbell Pullovers", "id": 194}, "cru": {"name": "Crunches", "id": 91}, "crun": {"name": "Crunches on Machine", "id": 94}, "crunc": {"name": "Crunches With Cable", "id": 92}, "crunch": {"name": "Crunches With Legs Up", "id": 416}, "d": {"name": "Deadhang", "id": 347}, "de": {"name": "Deadlifts", "id": 105}, "dec": {"name": "Decline Bench Press Barbell", "id": 100}, "decl": {"name": "Decline Bench Press Dumbbell", "id": 101}, "decli": {"name": "Decline Press Sit-Up", "id": 323}, "declin": {"name": "Decline Pushups", "id": 260}, "def": {"name": "Deficit Deadlift", "id": 381}, "dep": {"name": "Depth Jumps", "id": 267}, "dev": {"name": "Developp\u00e9 Couch\u00e9", "id": 471}, "di": {"name": "Diagonal Shoulder Press", "id": 329}, "dip": {"name": "Dips", "id": 82}, "dips": {"name": "Dips Between Two Benches", "id": 83}, "du": {"name": "Duck Walks", "id": 287}, "dum": {"name": "Dumbbell Concentration Curl", "id": 275}, "dumb": {"name": "Dumbbell Goblet Squat", "id": 300}, "dumbb": {"name": "Dumbbell Incline Curl", "id": 298}, "dumbbe": {"name": "Dumbbell Lunges Standing", "id": 112}, "dumbbel": {"name": "Dumbbell Lunges Walking", "id": 113}, "dumbbell": {"name": "Dumbbell Side Bends", "id": 324}, "dumbbells": {"name": "Dumbbells on Scott Machine", "id": 87}, "dumbbell ": {"name": "Dumbbell Split Squat", "id": 349}, "dumbbell t": {"name": "Dumbbell Triceps Extension", "id": 274}, "dumbe": {"name": "Dumbell Romanian Deadlift", "id": 435}, "e": {"name": "Extenseurs - Face", "id": 414}, "f": {"name": "Facepull", "id": 394}, "fa": {"name": "Farmers Walks", "id": 286}, "fe": {"name": "Fentes Avant", "id": 348}, "fi": {"name": "Fire Hydrant", "id": 480}, "fl": {"name": "Flutter Kicks", "id": 303}, "fly": {"name": "Fly With Cable", "id": 122}, "fly ": {"name": "Fly With Dumbbells", "id": 145}, "fly w": {"name": "Fly With Dumbbells, Decline Bench", "id": 146}, "fr": {"name": "Free Weight Lats Pulldown", "id": 431}, "fre": {"name": "French Press (skullcrusher) Dumbbells", "id": 85}, "fren": {"name": "French Press (skullcrusher) SZ-bar", "id": 84}, "fro": {"name": "Front Raises", "id": 233}, "fron": {"name": "Front Squats", "id": 191}, "fu": {"name": "Full Sit Outs", "id": 326}, "g": {"name": "Glute", "id": 262}, "gl": {"name": "Glute Bridge", "id": 408}, "go": {"name": "Good Mornings", "id": 116}, "h": {"name": "Hammercurls", "id": 86}, "ha": {"name": "Hammercurls on Cable", "id": 138}, "han": {"name": "Hand Grip", "id": 317}, "hang": {"name": "Hanging Leg Raises", "id": 166}, "he": {"name": "Hercules Pillars", "id": 291}, "hi": {"name": "High Knee Jumps", "id": 304}, "hig": {"name": "High Knees", "id": 432}, "high": {"name": "High Pull", "id": 164}, "hip": {"name": "Hip Raise, Lying", "id": 376}, "ho": {"name": "Hollow Hold", "id": 383}, "hy": {"name": "Hyperextensions", "id": 128}, "i": {"name": "Incline Barbell Bench Press", "id": 463}, "in": {"name": "Incline Bench Press", "id": 163}, "inc": {"name": "Inclined Bench", "id": 445}, "incl": {"name": "Incline Dumbbell Flye", "id": 206}, "incli": {"name": "Incline Dumbbell Press", "id": 210}, "inclin": {"name": "Incline Dumbbell Row", "id": 340}, "incline": {"name": "Incline Machine Chest Press", "id": 476}, "incline ": {"name": "Incline Plank With Alternate Floor Touch", "id": 165}, "incline p": {"name": "Incline Pushups", "id": 168}, "is": {"name": "Isometric Wipers", "id": 338}, "j": {"name": "Jogging", "id": 423}, "k": {"name": "Kettlebell Swings", "id": 249}, "l": {"name": "Lateral Raises", "id": 148}, "la": {"name": "Lateral Raises on Cable, One Armed", "id": 149}, "lat": {"name": "Lateral-to-Front Raises", "id": 306}, "lat ": {"name": "Lat Pull Down (Leaning Back)", "id": 188}, "lat p": {"name": "Lat Pull Down (Straight Back)", "id": 187}, "le": {"name": "Leg Curls (laying)", "id": 154}, "leg": {"name": "Leg Curls (sitting)", "id": 117}, "leg ": {"name": "Leg Curls (standing)", "id": 118}, "leg e": {"name": "Leg Extension", "id": 177}, "leg p": {"name": "Leg Presses (narrow)", "id": 115}, "leg pr": {"name": "Leg Presses (wide)", "id": 114}, "leg pre": {"name": "Leg Press on Hackenschmidt Machine", "id": 130}, "leg r": {"name": "Leg Raises, Lying", "id": 125}, "leg ra": {"name": "Leg Raises, Standing", "id": 126}, "lev": {"name": "Leverage Machine Chest Press", "id": 211}, "leve": {"name": "Leverage Machine Iso Row", "id": 214}, "l ": {"name": "L Hold", "id": 281}, "li": {"name": "LifeFitness Calf Extension Machine", "id": 380}, "lim": {"name": "Limbert", "id": 438}, "lo": {"name": "Long-Pulley (low Row)", "id": 143}, "lon": {"name": "Long-Pulley, Narrow", "id": 144}, "low": {"name": "Low Box Squat - Wide Stance", "id": 389}, "low ": {"name": "Low Row Machine", "id": 254}, "l-": {"name": "L-sit", "id": 456}, "l-s": {"name": "L-sit (full)", "id": 458}, "l-si": {"name": "L-sit (tucked)", "id": 459}, "ly": {"name": "Lying Rotator Cuff Exercise", "id": 312}, "m": {"name": "MGM Machine", "id": 141}, "mi": {"name": "Military Press", "id": 229}, "n": {"name": "Negative Crunches", "id": 93}, "o": {"name": "Overhand Cable Curl", "id": 197}, "ov": {"name": "Overhead Squat", "id": 355}, "ove": {"name": "Overhead Squat With Barbell", "id": 455}, "p": {"name": "Pause Bench", "id": 270}, "pe": {"name": "Pelvic Tilting Medium Risk", "id": 299}, "pen": {"name": "Pendelay Rows", "id": 202}, "per": {"name": "Perfect Push Up", "id": 182}, "pi": {"name": "Pike Push Ups", "id": 361}, "pis": {"name": "Pistol Squat", "id": 160}, "pl": {"name": "Plank", "id": 238}, "pla": {"name": "Plank Walk Up", "id": 443}, "po": {"name": "Pompes", "id": 392}, "pow": {"name": "Power Clean", "id": 189}, "pr": {"name": "Preacher Curls", "id": 193}, "pro": {"name": "Prone Scapular Retraction - Arms at Side", "id": 429}, "prop": {"name": "Propadanje", "id": 246}, "pu": {"name": "Pull-over  (Extended Arms)", "id": 441}, "pul": {"name": "Pullover With Dumbbell", "id": 440}, "pull": {"name": "Pull-ups", "id": 107}, "pull ": {"name": "Pull Ups on Machine", "id": 140}, "pus": {"name": "Push Press", "id": 190}, "push": {"name": "Push Ups", "id": 195}, "r": {"name": "Rack Deadlift", "id": 161}, "ra": {"name": "Razboj", "id": 248}, "re": {"name": "Rear Delt Raises", "id": 237}, "rea": {"name": "Rear Delt Rope Pull", "id": 460}, "rev": {"name": "Reverse Bar Curl", "id": 208}, "reve": {"name": "Reverse Dumbbell Flyes", "id": 395}, "rever": {"name": "Reverse Grip Bench Press", "id": 399}, "revers": {"name": "Reverse Plank", "id": 409}, "ri": {"name": "Ring Dips", "id": 360}, "ro": {"name": "Roman Chair", "id": 263}, "rom": {"name": "Roman Chair Crunch", "id": 446}, "roma": {"name": "Romanian Deadlift", "id": 351}, "row": {"name": "Rowing", "id": 477}, "rowi": {"name": "Rowing, Lying on Bench", "id": 142}, "rowin": {"name": "Rowing, Seated", "id": 108}, "rowing": {"name": "Rowing, T-bar", "id": 106}, "ru": {"name": "Run", "id": 337}, "run": {"name": "Run - Interval Training ", "id": 398}, "run ": {"name": "Run - Treadmill", "id": 269}, "run/": {"name": "Run/Walk", "id": 357}, "rus": {"name": "Russian Twist", "id": 427}, "s": {"name": "Seated Triceps Press", "id": 386}, "se": {"name": "Seatups", "id": 465}, "sel": {"name": "Selectorized Seated Cable Row,", "id": 430}, "sh": {"name": "Shotgun Row", "id": 339}, "sho": {"name": "Shoulder Press, Barbell", "id": 119}, "shou": {"name": "Shoulder Press, Dumbbells", "id": 123}, "shoul": {"name": "Shoulder Press, on Machine", "id": 152}, "should": {"name": "Shoulder Press, on Multi Press", "id": 155}, "shr": {"name": "Shrugs, Barbells", "id": 150}, "shru": {"name": "Shrugs, Dumbbells", "id": 151}, "si": {"name": "Side Crunch", "id": 176}, "sid": {"name": "Side Dumbbell Trunk Flexion", "id": 278}, "side": {"name": "Side-lying External Rotation", "id": 422}, "side ": {"name": "Side Plank", "id": 325}, "side r": {"name": "Side Raise", "id": 319}, "side t": {"name": "Side to Side Push Ups", "id": 302}, "sin": {"name": "Single-arm Preacher Curl", "id": 205}, "sit": {"name": "Sitting Calf Raises", "id": 103}, "sit-": {"name": "Sit-ups", "id": 95}, "sk": {"name": "Skipping - Standard", "id": 411}, "sm": {"name": "Smith Machine Close-grip Bench Press", "id": 218}, "sn": {"name": "Snach", "id": 271}, "so": {"name": "Soccer", "id": 454}, "sp": {"name": "Speed Deadlift", "id": 328}, "spi": {"name": "Spinning", "id": 385}, "spl": {"name": "Splinter Sit-ups", "id": 170}, "sq": {"name": "Squat Jumps", "id": 185}, "squ": {"name": "Squats", "id": 111}, "st": {"name": "Standing Calf Raises", "id": 102}, "sta": {"name": "Standing Rope Forearm", "id": 382}, "stat": {"name": "Stationary Bike", "id": 293}, "sti": {"name": "Stiff-legged Deadlifts", "id": 209}, "str": {"name": "Straight-arm Pull Down (bar Attachment)", "id": 216}, "stra": {"name": "Straight-arm Pull Down (rope Attachment)", "id": 215}, "su": {"name": "Superman", "id": 330}, "sup": {"name": "Super Squat", "id": 219}, "t": {"name": "Test", "id": 442}, "th": {"name": "Thruster", "id": 396}, "tr": {"name": "Trazioni Alla Sbarra Presa Inversa", "id": 179}, "tri": {"name": "Tricep Dumbbell Kickback", "id": 279}, "tric": {"name": "Tricep Push Down FreeWieghts", "id": 375}, "trice": {"name": "Triceps Bench Press One Barbell", "id": 186}, "tricep": {"name": "Triceps Dips", "id": 162}, "triceps": {"name": "Triceps Extensions on Cable", "id": 89}, "triceps ": {"name": "Triceps Extensions on Cable With Bar", "id": 90}, "triceps m": {"name": "Triceps Machine", "id": 139}, "tru": {"name": "Trunk Rotation With Cable ", "id": 310}, "tu": {"name": "Turkish Get-Up", "id": 318}, "u": {"name": "Underhand Lat Pull Down", "id": 212}, "up": {"name": "Upper Body", "id": 393}, "upp": {"name": "Upper External Oblique", "id": 258}, "upr": {"name": "Upright Row", "id": 472}, "upri": {"name": "Upright Row, on Multi Press", "id": 147}, "uprig": {"name": "Upright Row, SZ-bar", "id": 127}, "uprigh": {"name": "Upright Row w/ Dumbbells", "id": 311}, "v": {"name": "V-Bar Pulldown", "id": 424}, "w": {"name": "Walking", "id": 379}, "wa": {"name": "Wall Handstand", "id": 359}, "wal": {"name": "Wall Pushup", "id": 203}, "wall": {"name": "Wall Squat", "id": 387}, "we": {"name": "Weighted Step", "id": 320}, "wei": {"name": "Weighted Step-ups", "id": 321}, "wi": {"name": "Wide-grip Pulldown", "id": 204}, "wid": {"name": "Wide Pull-ups", "id": 479}, "wy": {"name": "Wyciskanie Skos", "id": 159}, "y": {"name": "Yolk Walks", "id": 288}, "z": {"name": "Z Curls", "id": 305}}
+{
+    "1ma": {
+        "id": 436,
+        "name": "10 Min Abs"
+    },
+    "2hks": {
+        "id": 345,
+        "name": "2 Handed Kettlebell Swing"
+    },
+    "5": {
+        "id": 449,
+        "name": "52"
+    },
+    "a": {
+        "id": 478,
+        "name": "Arms"
+    },
+    "agaam": {
+        "id": 350,
+        "name": "Aalex Gambe Alte al Muro"
+    },
+    "ah": {
+        "id": 410,
+        "name": "Arch Hold"
+    },
+    "asp": {
+        "id": 227,
+        "name": "Arnold Shoulder Press"
+    },
+    "axho": {
+        "id": 289,
+        "name": "Axe Hold"
+    },
+    "b": {
+        "id": 247,
+        "name": "Bend\u017e"
+    },
+    "bar": {
+        "id": 343,
+        "name": "Barbell Ab Rollout"
+    },
+    "bc": {
+        "id": 452,
+        "name": "Boulder Circuit"
+    },
+    "bcwb": {
+        "id": 74,
+        "name": "Biceps Curls With Barbell"
+    },
+    "bcwc": {
+        "id": 129,
+        "name": "Biceps Curl With Cable"
+    },
+    "bcwd": {
+        "id": 81,
+        "name": "Biceps Curls With Dumbbell"
+    },
+    "bcws": {
+        "id": 80,
+        "name": "Biceps Curls With SZ-bar"
+    },
+    "bd": {
+        "id": 97,
+        "name": "Benchpress Dumbbells"
+    },
+    "bdr": {
+        "id": 362,
+        "name": "Bentover Dumbbell Rows"
+    },
+    "bhp": {
+        "id": 268,
+        "name": "Bent High Pulls"
+    },
+    "bhs": {
+        "id": 407,
+        "name": "Barbell Hack Squats"
+    },
+    "bht": {
+        "id": 461,
+        "name": "Barbell Hip Thrust"
+    },
+    "bi": {
+        "id": 272,
+        "name": "Biking"
+    },
+    "bl": {
+        "id": 405,
+        "name": "Barbell Lunges"
+    },
+    "blr": {
+        "id": 421,
+        "name": "Bent-over Lateral Raises"
+    },
+    "bng": {
+        "id": 99,
+        "name": "Butterfly Narrow Grip"
+    },
+    "bo": {
+        "id": 341,
+        "name": "Body-Ups"
+    },
+    "bobr": {
+        "id": 412,
+        "name": "Bent Over Barbell Row"
+    },
+    "bor": {
+        "id": 109,
+        "name": "Bent Over Rowing"
+    },
+    "borr": {
+        "id": 110,
+        "name": "Bent Over Rowing Reverse"
+    },
+    "bp": {
+        "id": 192,
+        "name": "Bench Press"
+    },
+    "bpng": {
+        "id": 88,
+        "name": "Bench Press Narrow Grip"
+    },
+    "br": {
+        "id": 124,
+        "name": "Butterfly Reverse"
+    },
+    "brsq": {
+        "id": 342,
+        "name": "Braced Squat"
+    },
+    "bs": {
+        "id": 316,
+        "name": "Body Squats"
+    },
+    "bsals": {
+        "id": 473,
+        "name": "Back, Shoulder, And Leg Stretching."
+    },
+    "bss": {
+        "id": 346,
+        "name": "Bulgarian Split Squat"
+    },
+    "bte": {
+        "id": 344,
+        "name": "Barbell Triceps Extension"
+    },
+    "bu": {
+        "id": 354,
+        "name": "Burpees"
+    },
+    "but": {
+        "id": 98,
+        "name": "Butterfly"
+    },
+    "bw": {
+        "id": 307,
+        "name": "Bear Walk"
+    },
+    "bwc": {
+        "id": 451,
+        "name": "Barbell Wrist Curls"
+    },
+    "c": {
+        "id": 181,
+        "name": "Chin-ups"
+    },
+    "c-ppcas": {
+        "id": 437,
+        "name": "Circuit - Pullups, Pushups, Crunches, Air Squats"
+    },
+    "cbp": {
+        "id": 217,
+        "name": "Close-grip Bench Press"
+    },
+    "cc": {
+        "id": 207,
+        "name": "Cable Cross-over"
+    },
+    "cdp": {
+        "id": 194,
+        "name": "Cross-Bench Dumbbell Pullovers"
+    },
+    "cer": {
+        "id": 265,
+        "name": "Cable External Rotation"
+    },
+    "clpd": {
+        "id": 213,
+        "name": "Close-grip Lat Pull Down"
+    },
+    "com": {
+        "id": 94,
+        "name": "Crunches on Machine"
+    },
+    "cp": {
+        "id": 290,
+        "name": "Car Push"
+    },
+    "cp(ra": {
+        "id": 428,
+        "name": "Cable Pushdown (with Rope Attachment)"
+    },
+    "cpulpm": {
+        "id": 308,
+        "name": "Calf Press Using Leg Press Machine"
+    },
+    "cr": {
+        "id": 91,
+        "name": "Crunches"
+    },
+    "crohm": {
+        "id": 104,
+        "name": "Calf Raises on Hackenschmitt Machine"
+    },
+    "cu": {
+        "id": 157,
+        "name": "Chin Ups"
+    },
+    "cw": {
+        "id": 167,
+        "name": "Cable Woodchoppers"
+    },
+    "cwc": {
+        "id": 92,
+        "name": "Crunches With Cable"
+    },
+    "cwlu": {
+        "id": 416,
+        "name": "Crunches With Legs Up"
+    },
+    "d": {
+        "id": 347,
+        "name": "Deadhang"
+    },
+    "dbpb": {
+        "id": 100,
+        "name": "Decline Bench Press Barbell"
+    },
+    "dbpd": {
+        "id": 101,
+        "name": "Decline Bench Press Dumbbell"
+    },
+    "dbtb": {
+        "id": 83,
+        "name": "Dips Between Two Benches"
+    },
+    "dc": {
+        "id": 471,
+        "name": "Developp\u00e9 Couch\u00e9"
+    },
+    "dcc": {
+        "id": 275,
+        "name": "Dumbbell Concentration Curl"
+    },
+    "dd": {
+        "id": 381,
+        "name": "Deficit Deadlift"
+    },
+    "de": {
+        "id": 105,
+        "name": "Deadlifts"
+    },
+    "dgs": {
+        "id": 300,
+        "name": "Dumbbell Goblet Squat"
+    },
+    "di": {
+        "id": 82,
+        "name": "Dips"
+    },
+    "dic": {
+        "id": 298,
+        "name": "Dumbbell Incline Curl"
+    },
+    "dj": {
+        "id": 267,
+        "name": "Depth Jumps"
+    },
+    "dls": {
+        "id": 112,
+        "name": "Dumbbell Lunges Standing"
+    },
+    "dlw": {
+        "id": 113,
+        "name": "Dumbbell Lunges Walking"
+    },
+    "dosm": {
+        "id": 87,
+        "name": "Dumbbells on Scott Machine"
+    },
+    "dp": {
+        "id": 260,
+        "name": "Decline Pushups"
+    },
+    "dps": {
+        "id": 323,
+        "name": "Decline Press Sit-Up"
+    },
+    "drd": {
+        "id": 435,
+        "name": "Dumbell Romanian Deadlift"
+    },
+    "dsb": {
+        "id": 324,
+        "name": "Dumbbell Side Bends"
+    },
+    "dsp": {
+        "id": 329,
+        "name": "Diagonal Shoulder Press"
+    },
+    "dss": {
+        "id": 349,
+        "name": "Dumbbell Split Squat"
+    },
+    "dte": {
+        "id": 274,
+        "name": "Dumbbell Triceps Extension"
+    },
+    "dw": {
+        "id": 287,
+        "name": "Duck Walks"
+    },
+    "e-f": {
+        "id": 414,
+        "name": "Extenseurs - Face"
+    },
+    "f": {
+        "id": 394,
+        "name": "Facepull"
+    },
+    "fa": {
+        "id": 348,
+        "name": "Fentes Avant"
+    },
+    "fh": {
+        "id": 480,
+        "name": "Fire Hydrant"
+    },
+    "fk": {
+        "id": 303,
+        "name": "Flutter Kicks"
+    },
+    "fp(d": {
+        "id": 85,
+        "name": "French Press (skullcrusher) Dumbbells"
+    },
+    "fp(s": {
+        "id": 84,
+        "name": "French Press (skullcrusher) SZ-bar"
+    },
+    "fr": {
+        "id": 233,
+        "name": "Front Raises"
+    },
+    "fs": {
+        "id": 191,
+        "name": "Front Squats"
+    },
+    "fso": {
+        "id": 326,
+        "name": "Full Sit Outs"
+    },
+    "fw": {
+        "id": 286,
+        "name": "Farmers Walks"
+    },
+    "fwc": {
+        "id": 122,
+        "name": "Fly With Cable"
+    },
+    "fwd": {
+        "id": 145,
+        "name": "Fly With Dumbbells"
+    },
+    "fwddb": {
+        "id": 146,
+        "name": "Fly With Dumbbells, Decline Bench"
+    },
+    "fwlp": {
+        "id": 431,
+        "name": "Free Weight Lats Pulldown"
+    },
+    "g": {
+        "id": 262,
+        "name": "Glute"
+    },
+    "gb": {
+        "id": 408,
+        "name": "Glute Bridge"
+    },
+    "gm": {
+        "id": 116,
+        "name": "Good Mornings"
+    },
+    "h": {
+        "id": 86,
+        "name": "Hammercurls"
+    },
+    "hg": {
+        "id": 317,
+        "name": "Hand Grip"
+    },
+    "hh": {
+        "id": 383,
+        "name": "Hollow Hold"
+    },
+    "hipu": {
+        "id": 164,
+        "name": "High Pull"
+    },
+    "hk": {
+        "id": 432,
+        "name": "High Knees"
+    },
+    "hkj": {
+        "id": 304,
+        "name": "High Knee Jumps"
+    },
+    "hlr": {
+        "id": 166,
+        "name": "Hanging Leg Raises"
+    },
+    "hoc": {
+        "id": 138,
+        "name": "Hammercurls on Cable"
+    },
+    "hp": {
+        "id": 291,
+        "name": "Hercules Pillars"
+    },
+    "hrl": {
+        "id": 376,
+        "name": "Hip Raise, Lying"
+    },
+    "hy": {
+        "id": 128,
+        "name": "Hyperextensions"
+    },
+    "ib": {
+        "id": 445,
+        "name": "Inclined Bench"
+    },
+    "ibbp": {
+        "id": 463,
+        "name": "Incline Barbell Bench Press"
+    },
+    "ibp": {
+        "id": 163,
+        "name": "Incline Bench Press"
+    },
+    "idf": {
+        "id": 206,
+        "name": "Incline Dumbbell Flye"
+    },
+    "idp": {
+        "id": 210,
+        "name": "Incline Dumbbell Press"
+    },
+    "idr": {
+        "id": 340,
+        "name": "Incline Dumbbell Row"
+    },
+    "imcp": {
+        "id": 476,
+        "name": "Incline Machine Chest Press"
+    },
+    "ip": {
+        "id": 168,
+        "name": "Incline Pushups"
+    },
+    "ipwaft": {
+        "id": 165,
+        "name": "Incline Plank With Alternate Floor Touch"
+    },
+    "iw": {
+        "id": 338,
+        "name": "Isometric Wipers"
+    },
+    "j": {
+        "id": 423,
+        "name": "Jogging"
+    },
+    "ks": {
+        "id": 249,
+        "name": "Kettlebell Swings"
+    },
+    "l": {
+        "id": 438,
+        "name": "Limbert"
+    },
+    "l(": {
+        "id": 458,
+        "name": "L-sit (full)"
+    },
+    "l(r": {
+        "id": 143,
+        "name": "Long-Pulley (low Row)"
+    },
+    "l-": {
+        "id": 456,
+        "name": "L-sit"
+    },
+    "l-(t": {
+        "id": 459,
+        "name": "L-sit (tucked)"
+    },
+    "lapudo(sba": {
+        "id": 187,
+        "name": "Lat Pull Down (Straight Back)"
+    },
+    "lara": {
+        "id": 306,
+        "name": "Lateral-to-Front Raises"
+    },
+    "lbs-ws": {
+        "id": 389,
+        "name": "Low Box Squat - Wide Stance"
+    },
+    "lc(": {
+        "id": 154,
+        "name": "Leg Curls (laying)"
+    },
+    "lcem": {
+        "id": 380,
+        "name": "LifeFitness Calf Extension Machine"
+    },
+    "le": {
+        "id": 177,
+        "name": "Leg Extension"
+    },
+    "lecu(s": {
+        "id": 117,
+        "name": "Leg Curls (sitting)"
+    },
+    "legcur(st": {
+        "id": 118,
+        "name": "Leg Curls (standing)"
+    },
+    "lepr(w": {
+        "id": 114,
+        "name": "Leg Presses (wide)"
+    },
+    "lh": {
+        "id": 281,
+        "name": "L Hold"
+    },
+    "lmcp": {
+        "id": 211,
+        "name": "Leverage Machine Chest Press"
+    },
+    "lmir": {
+        "id": 214,
+        "name": "Leverage Machine Iso Row"
+    },
+    "ln": {
+        "id": 144,
+        "name": "Long-Pulley, Narrow"
+    },
+    "lp(": {
+        "id": 115,
+        "name": "Leg Presses (narrow)"
+    },
+    "lpd(b": {
+        "id": 188,
+        "name": "Lat Pull Down (Leaning Back)"
+    },
+    "lpohm": {
+        "id": 130,
+        "name": "Leg Press on Hackenschmidt Machine"
+    },
+    "lr": {
+        "id": 148,
+        "name": "Lateral Raises"
+    },
+    "lrce": {
+        "id": 312,
+        "name": "Lying Rotator Cuff Exercise"
+    },
+    "lrl": {
+        "id": 125,
+        "name": "Leg Raises, Lying"
+    },
+    "lrm": {
+        "id": 254,
+        "name": "Low Row Machine"
+    },
+    "lrocoa": {
+        "id": 149,
+        "name": "Lateral Raises on Cable, One Armed"
+    },
+    "lrs": {
+        "id": 126,
+        "name": "Leg Raises, Standing"
+    },
+    "mm": {
+        "id": 141,
+        "name": "MGM Machine"
+    },
+    "mp": {
+        "id": 229,
+        "name": "Military Press"
+    },
+    "nc": {
+        "id": 93,
+        "name": "Negative Crunches"
+    },
+    "occ": {
+        "id": 197,
+        "name": "Overhand Cable Curl"
+    },
+    "os": {
+        "id": 355,
+        "name": "Overhead Squat"
+    },
+    "oswb": {
+        "id": 455,
+        "name": "Overhead Squat With Barbell"
+    },
+    "p": {
+        "id": 238,
+        "name": "Plank"
+    },
+    "p(a": {
+        "id": 441,
+        "name": "Pull-over  (Extended Arms)"
+    },
+    "pb": {
+        "id": 270,
+        "name": "Pause Bench"
+    },
+    "pc": {
+        "id": 189,
+        "name": "Power Clean"
+    },
+    "pipuup": {
+        "id": 361,
+        "name": "Pike Push Ups"
+    },
+    "po": {
+        "id": 392,
+        "name": "Pompes"
+    },
+    "pp": {
+        "id": 190,
+        "name": "Push Press"
+    },
+    "ppu": {
+        "id": 182,
+        "name": "Perfect Push Up"
+    },
+    "pr": {
+        "id": 202,
+        "name": "Pendelay Rows"
+    },
+    "prcu": {
+        "id": 193,
+        "name": "Preacher Curls"
+    },
+    "pro": {
+        "id": 246,
+        "name": "Propadanje"
+    },
+    "ps": {
+        "id": 160,
+        "name": "Pistol Squat"
+    },
+    "psr-aas": {
+        "id": 429,
+        "name": "Prone Scapular Retraction - Arms at Side"
+    },
+    "ptmr": {
+        "id": 299,
+        "name": "Pelvic Tilting Medium Risk"
+    },
+    "pu": {
+        "id": 107,
+        "name": "Pull-ups"
+    },
+    "puom": {
+        "id": 140,
+        "name": "Pull Ups on Machine"
+    },
+    "puup": {
+        "id": 195,
+        "name": "Push Ups"
+    },
+    "pwd": {
+        "id": 440,
+        "name": "Pullover With Dumbbell"
+    },
+    "pwu": {
+        "id": 443,
+        "name": "Plank Walk Up"
+    },
+    "r": {
+        "id": 248,
+        "name": "Razboj"
+    },
+    "r-it": {
+        "id": 398,
+        "name": "Run - Interval Training "
+    },
+    "r-t": {
+        "id": 269,
+        "name": "Run - Treadmill"
+    },
+    "rbc": {
+        "id": 208,
+        "name": "Reverse Bar Curl"
+    },
+    "rc": {
+        "id": 263,
+        "name": "Roman Chair"
+    },
+    "rcc": {
+        "id": 446,
+        "name": "Roman Chair Crunch"
+    },
+    "rd": {
+        "id": 161,
+        "name": "Rack Deadlift"
+    },
+    "rdf": {
+        "id": 395,
+        "name": "Reverse Dumbbell Flyes"
+    },
+    "rdr": {
+        "id": 237,
+        "name": "Rear Delt Raises"
+    },
+    "rdrp": {
+        "id": 460,
+        "name": "Rear Delt Rope Pull"
+    },
+    "rgbp": {
+        "id": 399,
+        "name": "Reverse Grip Bench Press"
+    },
+    "ridi": {
+        "id": 360,
+        "name": "Ring Dips"
+    },
+    "rlob": {
+        "id": 142,
+        "name": "Rowing, Lying on Bench"
+    },
+    "ro": {
+        "id": 477,
+        "name": "Rowing"
+    },
+    "rode": {
+        "id": 351,
+        "name": "Romanian Deadlift"
+    },
+    "rp": {
+        "id": 409,
+        "name": "Reverse Plank"
+    },
+    "rs": {
+        "id": 108,
+        "name": "Rowing, Seated"
+    },
+    "rt": {
+        "id": 106,
+        "name": "Rowing, T-bar"
+    },
+    "ru": {
+        "id": 337,
+        "name": "Run"
+    },
+    "run": {
+        "id": 357,
+        "name": "Run/Walk"
+    },
+    "rutw": {
+        "id": 427,
+        "name": "Russian Twist"
+    },
+    "s": {
+        "id": 111,
+        "name": "Squats"
+    },
+    "s-s": {
+        "id": 411,
+        "name": "Skipping - Standard"
+    },
+    "sb": {
+        "id": 150,
+        "name": "Shrugs, Barbells"
+    },
+    "sc": {
+        "id": 176,
+        "name": "Side Crunch"
+    },
+    "scr": {
+        "id": 103,
+        "name": "Sitting Calf Raises"
+    },
+    "sd": {
+        "id": 151,
+        "name": "Shrugs, Dumbbells"
+    },
+    "sdtf": {
+        "id": 278,
+        "name": "Side Dumbbell Trunk Flexion"
+    },
+    "se": {
+        "id": 465,
+        "name": "Seatups"
+    },
+    "ser": {
+        "id": 422,
+        "name": "Side-lying External Rotation"
+    },
+    "si": {
+        "id": 95,
+        "name": "Sit-ups"
+    },
+    "sira": {
+        "id": 319,
+        "name": "Side Raise"
+    },
+    "sj": {
+        "id": 185,
+        "name": "Squat Jumps"
+    },
+    "smcbp": {
+        "id": 218,
+        "name": "Smith Machine Close-grip Bench Press"
+    },
+    "sn": {
+        "id": 271,
+        "name": "Snach"
+    },
+    "so": {
+        "id": 454,
+        "name": "Soccer"
+    },
+    "sp": {
+        "id": 325,
+        "name": "Side Plank"
+    },
+    "ohp": {
+        "id": 119,
+        "name": "Shoulder Press, Barbell"
+    },
+    "spc": {
+        "id": 205,
+        "name": "Single-arm Preacher Curl"
+    },
+    "spd": {
+        "id": 123,
+        "name": "Shoulder Press, Dumbbells"
+    },
+    "spd(a": {
+        "id": 216,
+        "name": "Straight-arm Pull Down (bar Attachment)"
+    },
+    "spde": {
+        "id": 328,
+        "name": "Speed Deadlift"
+    },
+    "spi": {
+        "id": 385,
+        "name": "Spinning"
+    },
+    "spom": {
+        "id": 152,
+        "name": "Shoulder Press, on Machine"
+    },
+    "spomp": {
+        "id": 155,
+        "name": "Shoulder Press, on Multi Press"
+    },
+    "sr": {
+        "id": 339,
+        "name": "Shotgun Row"
+    },
+    "srf": {
+        "id": 382,
+        "name": "Standing Rope Forearm"
+    },
+    "ss": {
+        "id": 170,
+        "name": "Splinter Sit-ups"
+    },
+    "sscr": {
+        "id": 430,
+        "name": "Selectorized Seated Cable Row,"
+    },
+    "stbi": {
+        "id": 293,
+        "name": "Stationary Bike"
+    },
+    "stcara": {
+        "id": 102,
+        "name": "Standing Calf Raises"
+    },
+    "stde": {
+        "id": 209,
+        "name": "Stiff-legged Deadlifts"
+    },
+    "stp": {
+        "id": 386,
+        "name": "Seated Triceps Press"
+    },
+    "stpudo(rat": {
+        "id": 215,
+        "name": "Straight-arm Pull Down (rope Attachment)"
+    },
+    "stspu": {
+        "id": 302,
+        "name": "Side to Side Push Ups"
+    },
+    "su": {
+        "id": 330,
+        "name": "Superman"
+    },
+    "susq": {
+        "id": 219,
+        "name": "Super Squat"
+    },
+    "tbpob": {
+        "id": 186,
+        "name": "Triceps Bench Press One Barbell"
+    },
+    "td": {
+        "id": 162,
+        "name": "Triceps Dips"
+    },
+    "tdk": {
+        "id": 279,
+        "name": "Tricep Dumbbell Kickback"
+    },
+    "teoc": {
+        "id": 89,
+        "name": "Triceps Extensions on Cable"
+    },
+    "teocwb": {
+        "id": 90,
+        "name": "Triceps Extensions on Cable With Bar"
+    },
+    "tg": {
+        "id": 318,
+        "name": "Turkish Get-Up"
+    },
+    "th": {
+        "id": 396,
+        "name": "Thruster"
+    },
+    "tm": {
+        "id": 139,
+        "name": "Triceps Machine"
+    },
+    "tpdf": {
+        "id": 375,
+        "name": "Tricep Push Down FreeWieghts"
+    },
+    "trwc": {
+        "id": 310,
+        "name": "Trunk Rotation With Cable "
+    },
+    "ub": {
+        "id": 393,
+        "name": "Upper Body"
+    },
+    "ueo": {
+        "id": 258,
+        "name": "Upper External Oblique"
+    },
+    "ulpd": {
+        "id": 212,
+        "name": "Underhand Lat Pull Down"
+    },
+    "ur": {
+        "id": 472,
+        "name": "Upright Row"
+    },
+    "uromp": {
+        "id": 147,
+        "name": "Upright Row, on Multi Press"
+    },
+    "urs": {
+        "id": 127,
+        "name": "Upright Row, SZ-bar"
+    },
+    "urwd": {
+        "id": 311,
+        "name": "Upright Row w/ Dumbbells"
+    },
+    "vp": {
+        "id": 424,
+        "name": "V-Bar Pulldown"
+    },
+    "w": {
+        "id": 379,
+        "name": "Walking"
+    },
+    "weiste": {
+        "id": 321,
+        "name": "Weighted Step-ups"
+    },
+    "west": {
+        "id": 320,
+        "name": "Weighted Step"
+    },
+    "wh": {
+        "id": 359,
+        "name": "Wall Handstand"
+    },
+    "widpul": {
+        "id": 479,
+        "name": "Wide Pull-ups"
+    },
+    "wipu": {
+        "id": 204,
+        "name": "Wide-grip Pulldown"
+    },
+    "wp": {
+        "id": 203,
+        "name": "Wall Pushup"
+    },
+    "ws": {
+        "id": 387,
+        "name": "Wall Squat"
+    },
+    "yw": {
+        "id": 288,
+        "name": "Yolk Walks"
+    },
+    "zc": {
+        "id": 305,
+        "name": "Z Curls"
+    }
+}
