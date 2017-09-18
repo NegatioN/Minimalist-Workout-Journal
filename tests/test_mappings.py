@@ -23,7 +23,7 @@ class TestMappings(object):
                 alternatives.append(mappings.make_shortcut(ex, i))
         seen = []
         for ex in exercises:
-            shortcut, nameId = mappings.find_appropriate_shortcut({"id": 1}, ex, [], seen)
+            shortcut, nameId = mappings.find_appropriate_shortcut(1, ex, [])
             seen.append(ex)
             assert shortcut in alternatives
         assert [item for item, count in Counter(seen).items() if count > 1] == []
