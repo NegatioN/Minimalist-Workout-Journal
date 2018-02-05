@@ -55,11 +55,31 @@ class TestMWJ(object):
         assert answer[0] is sets and answer[1] is reps
 
     def test_parse_user_input(self, stateful_parser):
-        expected_output = [{'date': str(date.today()),
-                            'exercise': 2,
-                            'repetition_unit': 1,
-                            'reps': 5,
-                            'weight': 27.0,
-                            'weight_unit': 1,
-                            'workout': 5}]
-        assert stateful_parser.parse_user_input("s,1x5+27") == expected_output
+        expected_output = {'date': str(date.today()),
+                           'comment': '',
+                           'session_rating': '1',
+                           'exercises': [{
+                               'exercise_id': 2,
+                               'sets': [{
+                                   'repetition_unit': 1,
+                                   'reps': 5,
+                                   'weight': 27.0,
+                                   'weight_unit': 1
+                               },
+                                   {
+                                       'repetition_unit': 1,
+                                       'reps': 4,
+                                       'weight': 0.0,
+                                       'weight_unit': 1
+                                   }]
+                           },
+                               {
+                                   'exercise_id': 1,
+                                   'sets': [{
+                                       'repetition_unit': 1,
+                                       'reps': 5,
+                                       'weight': 0.0,
+                                       'weight_unit': 1
+                                   }]
+                               }]}
+        assert stateful_parser.parse_user_input("s,1x5+27'1x4;p,1x5") == expected_output

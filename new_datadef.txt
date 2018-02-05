@@ -1,0 +1,8 @@
+- workout_id
+  - date
+  - exercise_id
+  - impression_rating: (1-10)
+  - comment?
+  - sets_num?
+    - reps
+    - weight

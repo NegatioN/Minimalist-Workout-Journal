@@ -17,8 +17,7 @@ def find_appropriate_shortcut(id, name, mappings):
             return proposed_binding, {"name": name, "id": id}
 
 class Mapping:
-    def __init__(self, api, mapping_dest_path):
-        self.api = api
+    def __init__(self, mapping_dest_path):
         self.mapping_dest_path = mapping_dest_path
 
     @staticmethod
@@ -41,13 +40,13 @@ class Mapping:
         logging.info("Saved new mapping-file.")
 
     def get_mappings(self):
-        if not os.path.isfile(self.mapping_dest_path):
-            logging.info("Found no prior mapping-file at {}".format(self.mapping_dest_path))
-            exercises = self.api.get_exercises()
-            mappings = self.generate_mappings(exercises)
-            self.save_mappings(mappings, self.mapping_dest_path)
-        else:
-            mappings = self.get_saved_mappings()
+        #if not os.path.isfile(self.mapping_dest_path):
+        #    logging.info("Found no prior mapping-file at {}".format(self.mapping_dest_path))
+        #    exercises = self.api.get_exercises()
+        #    mappings = self.generate_mappings(exercises)
+        #    self.save_mappings(mappings, self.mapping_dest_path)
+        #else:
+        mappings = self.get_saved_mappings()
         return mappings
 
     def get_saved_mappings(self):

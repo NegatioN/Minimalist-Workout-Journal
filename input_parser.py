@@ -2,6 +2,7 @@
 # -*- coding: utf-8
 import re
 import wger_data_defs as wdata
+import data_def as datadef
 
 EXR_SET_REGEX = re.compile("[,]")
 SET_REP_REGEX = re.compile("[x]")
@@ -17,21 +18,21 @@ class Parser:
         self.mappings = mappings
 
     def parse_user_input(self, text):
-        set_list = []
+        exercise_list = []
         for exercises in self.split_exercises(text):
             ex_short, sets = self.split_exercise_and_set(exercises)
             exercise_id = self.get_mapping_id(ex_short)
+            set_list = []
             for set in self.split_sets(sets):
                 weight = self.grab_set_weight(set)
                 remaining_set_text = self.split_weight_and_set(set)[0]
                 set_num, reps = self.grab_set_and_reps(remaining_set_text)
                 for i in range(set_num):
-                    set_list.append(wdata.create_set_object(exercise_id=exercise_id,
-                                                            weight=weight,
-                                                            reps=reps,
-                                                            date=self.exercise_date,
-                                                            workout_id=self.workout_id))
-        return set_list
+                    set_list.append(datadef.create_set_object(reps=reps, weight=weight))
+            exercise_list.append(datadef.create_exercise(exercise_id, set_list))
+
+
+        return datadef.create_workout(session_date=self.exercise_date, exercises=exercise_list)
 
     def get_mapping_id(self, exercise_shortcut):
         return self.mappings[exercise_shortcut]["id"] if self.mappings[exercise_shortcut] else 1
