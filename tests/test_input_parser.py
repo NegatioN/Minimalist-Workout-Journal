@@ -12,46 +12,46 @@ def stateful_parser():
 
 
 class TestMWJ(object):
-    @pytest.mark.parametrize("text", ["3x5+1"])
+    @pytest.mark.parametrize("text", ["3*5+1"])
     def test_grab_set_weight_positive(self, text, stateful_parser):
         assert stateful_parser.grab_set_weight(text) > 0
 
-    @pytest.mark.parametrize("text", ["3x5+1.5"])
+    @pytest.mark.parametrize("text", ["3*5+1.5"])
     def test_grab_set_weight_floats(self, text, stateful_parser):
         assert stateful_parser.grab_set_weight(text) == 1.5
 
-    @pytest.mark.parametrize("text", ["3x5-1"])
+    @pytest.mark.parametrize("text", ["3*5-1"])
     def test_grab_set_weight_negative(self, text, stateful_parser):
         assert stateful_parser.grab_set_weight(text) < 0
 
-    @pytest.mark.parametrize("text", ["3x5"])
+    @pytest.mark.parametrize("text", ["3*5"])
     def test_grab_set_weight_noweight(self, text, stateful_parser):
         assert stateful_parser.grab_set_weight(text) == 0
 
-    @pytest.mark.parametrize("text", ["1x3'3x7'24x1", "5", "1x5"])
+    @pytest.mark.parametrize("text", ["1*3'3*7'24*1", "5", "1*5"])
     def test_split_sets(self, text):
         assert len(Parser.split_sets(text)) is text.count("'") + 1
 
-    @pytest.mark.parametrize("text", ["{},1x1+1", "{},2x1-1", "{},5"])
+    @pytest.mark.parametrize("text", ["{},1*1+1", "{},2*1-1", "{},5"])
     def test_split_exercise_and_set(self, text):
         ex = 's'
         complete_text = text.format(ex)
         assert Parser.split_exercise_and_set(complete_text)[0] == ex
         assert Parser.split_exercise_and_set(complete_text)[1] == "".join(complete_text[2:])
 
-    @pytest.mark.parametrize("text", ["s,1x2;s,1x2;s,1x2",
-                                      "s,1x2",
+    @pytest.mark.parametrize("text", ["s,1*2;s,1*2;s,1*2",
+                                      "s,1*2",
                                       "s,1",
-                                      "s,1x2;p,188x29;lop,22x9"])
+                                      "s,1*2;p,188*29;lop,22*9"])
     def test_split_exercises(self, text):
         assert len(Parser.split_exercises(text)) is text.count(";") + 1
 
-    @pytest.mark.parametrize("text", ["{}", "2x{}", "1x{}"])
+    @pytest.mark.parametrize("text", ["{}", "2*{}", "1*{}"])
     @pytest.mark.parametrize("reps", [5, 10, 100])
     def test_grab_set_and_reps(self, text, reps):
         complete_text = text.format(reps)
         answer = Parser.grab_set_and_reps(complete_text)
-        sets = int(complete_text.split("x")[0]) if len(complete_text.split("x")) > 1 else 1
+        sets = int(complete_text.split("*")[0]) if len(complete_text.split("*")) > 1 else 1
         assert answer[0] is sets and answer[1] is reps
 
     def test_parse_user_input(self, stateful_parser):
@@ -82,4 +82,4 @@ class TestMWJ(object):
                                        'weight_unit': 1
                                    }]
                                }]}
-        assert stateful_parser.parse_user_input("s,1x5+27'1x4;p,1x5") == expected_output
+        assert stateful_parser.parse_user_input("s,1*5+27'1*4;p,1*5") == expected_output

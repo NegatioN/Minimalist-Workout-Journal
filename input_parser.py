@@ -4,7 +4,7 @@ import re
 import data_def as datadef
 
 EXR_SET_REGEX = re.compile("[,]")
-SET_REP_REGEX = re.compile("[x]")
+SET_REP_REGEX = re.compile("[\*]")
 WEIGHT_SET_REGEX = re.compile("(\+|-)")
 SET_REGEX = re.compile("[']")
 EXRS_REGEX = re.compile("[;]")
