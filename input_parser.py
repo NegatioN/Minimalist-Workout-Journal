@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8
 import re
-import wger_data_defs as wdata
 import data_def as datadef
 
 EXR_SET_REGEX = re.compile("[,]")

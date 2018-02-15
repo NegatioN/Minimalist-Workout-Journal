@@ -22,11 +22,3 @@ You can add your own shortcuts for exercise-names in the mapping-file.
 * `;` - `exercise+more;exercise-more` - Splits each exercise from each other
 * `'` - `1x5'2x3` - Splits different length sets from each other
 * `+/-` - `1x5+25 2x3-22` - Separates sets from the weight for each set. (negative for assisted sets)
-
-
-## Backend
-The project currently uses [Wger](https://github.com/wger-project/wger) as a backend. You can make a user at 
-[https://wger.de](https://wger.de), and hook up your API-token to this application.
-
-This will allow for owning the data yourself, and make it possible to generate nice visualizations of progress further
-down the road.

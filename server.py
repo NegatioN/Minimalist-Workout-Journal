@@ -29,8 +29,7 @@ async def handle(request):
         return web.Response(status=422)
 
 app = web.Application()
-app.router.add_get('/', handle)
-app.router.add_get('/{workout}', handle)
+app.router.add_get('/workout/{workout}', handle)
 
 if __name__ == "__main__":
     web.run_app(app, port=PORT)

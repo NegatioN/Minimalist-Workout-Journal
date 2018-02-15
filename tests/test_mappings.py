@@ -5,7 +5,7 @@ import mappings
 from collections import Counter
 
 
-class TestMappings(object):
+class TestMappings:
     @pytest.mark.parametrize("first_word", ["Squat", "Split", "10", "Check"])
     @pytest.mark.parametrize("second_word", ["Squat", "Split", "10", "Check"])
     def test_make_shortcut(self, first_word, second_word):
