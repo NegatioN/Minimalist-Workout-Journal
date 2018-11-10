@@ -4,21 +4,24 @@ from aiohttp import web
 import logging
 from input_parser import Parser
 from mappings import Mapping
+import data_def
 import json
-from datetime import date
 
 PORT = 8080
-SAVE_LOCATION = 'my_workouts.json'
+SAVE_LOCATION = 'my_workouts.csv'
 
 logging.basicConfig(level=logging.INFO)
 
 mapping = Mapping(mapping_dest_path='mappings.json').get_mappings()
 
-input_parser = Parser(exercise_date=date.today(),
-                      mappings=mapping,
-                      workout_id=1)
+input_parser = Parser(mappings=mapping)
 
-#TODO collapse multiple inputs of the same exercise to ONE. ex: s,1x2;s,1x2;s,1x3
+async def display_mappings(request):
+    try:
+        return web.Response(text=json.dumps(mapping))
+    except Exception as e:
+        logging.WARN("Couldn't find mappings")
+        return web.Response(status=422)
 
 async def json_workout(request):
     workout = request.match_info.get('workout', "nothing")
@@ -39,20 +42,15 @@ async def persist_workout(request):
     workout = request.match_info.get('workout', "nothing")
     try:
         workout_data = input_parser.parse_user_input(workout)
-        print(workout_data)
-        with open(SAVE_LOCATION, 'w+') as f:
-            if f.read() == '':
-                prev_content = []
-            else:
-                prev_content = json.loads(f)
-            prev_content.append(workout_data)
-            json.dump(prev_content, f)
+        df = data_def.json_workout_to_df(workout_data)
+        data_def.join_workout_dfs(SAVE_LOCATION, df)
         return web.Response(text='Added workout')
     except Exception as e:
         logging.WARN("Got unprocessable input: {}".format(workout))
         return web.Response(status=422)
 
 app = web.Application()
+app.router.add_get('/mappings', display_mappings)
 app.router.add_get('/workout/{workout}', json_workout)
 app.router.add_get('/workout/save/{workout}', persist_workout)
 

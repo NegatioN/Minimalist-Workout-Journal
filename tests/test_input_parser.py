@@ -7,8 +7,7 @@ from datetime import date
 
 @pytest.fixture()
 def stateful_parser():
-    return Parser(exercise_date=date.today(), workout_id=5, mappings={"p": {"name": "pushup", "id": 1},
-                                                                      "s": {"name": "squat", "id": 2}})
+    return Parser(mappings={"p": {"name": "pushup", "id": 1}, "s": {"name": "squat", "id": 2}})
 
 
 class TestMWJ(object):
@@ -46,6 +45,15 @@ class TestMWJ(object):
     def test_split_exercises(self, text):
         assert len(Parser.split_exercises(text)) is text.count(";") + 1
 
+    def test_grab_date(self):
+        t, d = Parser.grab_date('s,1+25')
+        assert d == date.today()
+        t, d = Parser.grab_date('s,1[2018-11-30]')
+        assert d == date(2018, 11, 30)
+        t, d = Parser.grab_date('bp,25+44[1990-2-3]')
+        assert d == date(1990, 2, 3)
+
+
     @pytest.mark.parametrize("text", ["{}", "2*{}", "1*{}"])
     @pytest.mark.parametrize("reps", [5, 10, 100])
     def test_grab_set_and_reps(self, text, reps):
@@ -61,25 +69,22 @@ class TestMWJ(object):
                            'exercises': [{
                                'exercise_id': 2,
                                'sets': [{
-                                   'repetition_unit': 1,
                                    'reps': 5,
                                    'weight': 27.0,
-                                   'weight_unit': 1
+                                   'weight_unit': 'kg'
                                },
                                    {
-                                       'repetition_unit': 1,
                                        'reps': 4,
                                        'weight': 0.0,
-                                       'weight_unit': 1
+                                       'weight_unit': 'kg'
                                    }]
                            },
                                {
                                    'exercise_id': 1,
                                    'sets': [{
-                                       'repetition_unit': 1,
                                        'reps': 5,
                                        'weight': 0.0,
-                                       'weight_unit': 1
+                                       'weight_unit': 'kg'
                                    }]
                                }]}
         assert stateful_parser.parse_user_input("s,1*5+27'1*4;p,1*5") == expected_output

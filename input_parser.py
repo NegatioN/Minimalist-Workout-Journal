@@ -2,22 +2,23 @@
 # -*- coding: utf-8
 import re
 import data_def as datadef
+from datetime import date, datetime
 
 EXR_SET_REGEX = re.compile("[,]")
-SET_REP_REGEX = re.compile("[\*]")
+SET_REP_REGEX = re.compile("[*]")
 WEIGHT_SET_REGEX = re.compile("(\+|-)")
 SET_REGEX = re.compile("[']")
 EXRS_REGEX = re.compile("[;]")
+DATE_REGEX = re.compile('(.*)\[(.*)\]')
 
 
 class Parser:
-    def __init__(self, exercise_date, workout_id, mappings):
-        self.exercise_date = exercise_date
-        self.workout_id = workout_id
+    def __init__(self, mappings):
         self.mappings = mappings
 
     def parse_user_input(self, text):
         exercise_list = []
+        text, exr_date = self.grab_date(text)
         for exercises in self.split_exercises(text):
             ex_short, sets = self.split_exercise_and_set(exercises)
             exercise_id = self.get_mapping_id(ex_short)
@@ -30,8 +31,8 @@ class Parser:
                     set_list.append(datadef.create_set_object(reps=reps, weight=weight))
             exercise_list.append(datadef.create_exercise(exercise_id, set_list))
 
-
-        return datadef.create_workout(session_date=self.exercise_date, exercises=exercise_list)
+        print(exercise_list)
+        return datadef.create_workout(session_date=exr_date, exercises=exercise_list)
 
     def get_mapping_id(self, exercise_shortcut):
         return self.mappings[exercise_shortcut]["id"] if self.mappings[exercise_shortcut] else 1
@@ -66,4 +67,12 @@ class Parser:
     @staticmethod
     def split_exercise_and_set(exercise_and_set_text):
         split_text = EXR_SET_REGEX.split(exercise_and_set_text)
-        return split_text[0], split_text[1]
+        return split_text[0], split_text[1]    \
+
+    @staticmethod
+    def grab_date(full_text):
+        out = DATE_REGEX.search(full_text)
+        if out:
+            return out.group(1), datetime.strptime(out.group(2), '%Y-%m-%d').date()
+        else:
+            return full_text, date.today()

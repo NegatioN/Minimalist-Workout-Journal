@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+my_workouts.csv
+.pytest_cache/
 .idea/
 
 # C extensions
