@@ -28,3 +28,8 @@ You can add your own shortcuts for exercise-names in the mapping-file.
 Start server with `python3 server.py`
 
 Workouts can be posted to `localhost:8080/workout/save/$YOUR_WORKOUT`
+
+
+## Output
+Currently posting an entry to the API adds your workouts to a csv-file `my_workouts.csv` which should
+be easy to use for various python stats tasks.
