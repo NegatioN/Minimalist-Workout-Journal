@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 
 def create_workout(session_date, exercises):
     return {
@@ -40,11 +39,7 @@ def json_workout_to_df(dict_style_workout):
                            'date': [date for x in range(len(exr_id))]})
 
 
-def join_workout_dfs(master_df_path, input_df):
-    if os.path.isfile(master_df_path):
-        master_df = pd.read_csv(master_df_path)
-        df = pd.concat([master_df, input_df])
-        df.to_csv(master_df_path, index=False)
-    else:
-        df = input_df
-        df.to_csv(master_df_path, index=False)
+def join_workout_dfs(master_df, input_df, save_path):
+    df = pd.concat([master_df, input_df])
+    df.to_csv(save_path, index=False)
+    return df
