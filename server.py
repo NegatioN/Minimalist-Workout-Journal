@@ -9,6 +9,7 @@ import json
 import pandas as pd
 import argparse
 from auth import Authorization
+import os
 
 
 parser = argparse.ArgumentParser()
@@ -20,8 +21,14 @@ parser.add_argument('--user', default='dummy')
 
 options = parser.parse_args()
 
+def load_data(path):
+    if os.path.isfile(path):
+        return pd.read_csv(options.save)
+    else:
+        return pd.DataFrame()
+
 auth = Authorization(user=options.user, password=options.secret)
-master_df = pd.read_csv(options.save)
+master_df = load_data(options.save)
 logging.basicConfig(level=logging.INFO)
 
 mapping = Mapping(mapping_dest_path=options.mapping).get_mappings()

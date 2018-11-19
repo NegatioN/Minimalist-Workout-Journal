@@ -3,9 +3,6 @@ Description=Minimalist Workout Journal
 After=network.target
 
 [Service]
-Type=simple
-User=joakim
-WorkingDirectory=/home/joakim
 ExecStart=. /home/joakim/workout_secret; /home/joakim/projects/Minimalist-Workout-Journal/server.py --secret $WORKOUT_SECRET -p 80
 Restart=on-failure
 
