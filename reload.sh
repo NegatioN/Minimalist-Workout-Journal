@@ -3,4 +3,4 @@
 . /home/joakim/workout_secret
 git pull --rebase
 sudo pip3 install -r requirements.txt
-systemctl restart worklog.service
+sudo systemctl restart worklog.service
