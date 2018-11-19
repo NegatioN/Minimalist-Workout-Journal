@@ -3,7 +3,8 @@ Description=Minimalist Workout Journal
 After=network.target
 
 [Service]
-ExecStart=. /home/joakim/workout_secret; /home/joakim/projects/Minimalist-Workout-Journal/server.py --secret $WORKOUT_SECRET -p 80
+EnvironmentFile=/home/joakim/workout_secret
+ExecStart=/home/joakim/projects/Minimalist-Workout-Journal/server.py --secret $WORKOUT_SECRET -p 80
 Restart=on-failure
 
 [Install]
