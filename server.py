@@ -11,11 +11,12 @@ import argparse
 from auth import Authorization
 import os
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-p', '--port', default=8080)
-parser.add_argument('-s', '--save', default='my_workouts.csv')
-parser.add_argument('-m', '--mapping', default='mappings.json')
+parser.add_argument('-s', '--save', default='{}/my_workouts.csv'.format(dir_path))
+parser.add_argument('-m', '--mapping', default='{}/mappings.json'.format(dir_path))
 parser.add_argument('--secret', default='dummy')
 parser.add_argument('--user', default='dummy')
 
