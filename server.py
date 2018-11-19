@@ -7,20 +7,30 @@ from mappings import Mapping
 import data_def
 import json
 import pandas as pd
-
-PORT = 8080
-SAVE_LOCATION = 'my_workouts.csv'
-master_df = pd.read_csv(SAVE_LOCATION)
+import argparse
+from auth import Authorization
 
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-p', '--port', default=8080)
+parser.add_argument('-s', '--save', default='my_workouts.csv')
+parser.add_argument('-m', '--mapping', default='mappings.json')
+parser.add_argument('--secret', default='dummy')
+parser.add_argument('--user', default='dummy')
+
+options = parser.parse_args()
+
+auth = Authorization(user=options.user, password=options.secret)
+master_df = pd.read_csv(options.save)
 logging.basicConfig(level=logging.INFO)
 
-mapping = Mapping(mapping_dest_path='mappings.json').get_mappings()
+mapping = Mapping(mapping_dest_path=options.mapping).get_mappings()
 
 input_parser = Parser(mappings=mapping)
 rev_mapping = {k: v['id'] for k,v in mapping.items()}
 
 async def display_mappings(request):
+    await auth.authenticate(request)
     try:
         return web.Response(text=json.dumps(mapping))
     except Exception as e:
@@ -28,6 +38,7 @@ async def display_mappings(request):
         return web.Response(status=422)
 
 async def json_workout(request):
+    await auth.authenticate(request)
     workout = request.match_info.get('workout', "nothing")
     try:
         workout_data = input_parser.parse_user_input(workout)
@@ -36,24 +47,20 @@ async def json_workout(request):
         logging.WARN("Got unprocessable input: {}".format(workout))
         return web.Response(status=422)
 
-def concat_content(workout, prev_workouts):
-    if len(prev_workouts) > 0:
-        prev_workouts.append(workout)
-    else:
-        return [workout]
-
 async def persist_workout(request):
+    await auth.authenticate(request)
     workout = request.match_info.get('workout', "nothing")
     try:
         workout_data = input_parser.parse_user_input(workout)
         df = data_def.json_workout_to_df(workout_data)
-        data_def.join_workout_dfs(master_df, df, SAVE_LOCATION)
+        data_def.join_workout_dfs(master_df, df, options.save)
         return web.Response(text='Added workout')
     except Exception as e:
         logging.WARN("Got unprocessable input: {}".format(workout))
         return web.Response(status=422)
 
 async def last_of_exercise(request):
+    await auth.authenticate(request)
     exr  = request.match_info.get('exercise', "nothing")
     try:
         exercise_num = rev_mapping[exr]
@@ -73,4 +80,4 @@ app.router.add_get('/workout/save/{workout}', persist_workout)
 app.router.add_get('/get_last/{exercise}', last_of_exercise)
 
 if __name__ == "__main__":
-    web.run_app(app, port=PORT)
+    web.run_app(app, port=options.port)
