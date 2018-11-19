@@ -6,8 +6,9 @@ After=network.target
 Type=simple
 User=joakim
 WorkingDirectory=/home/joakim
-ExecStart=. /home/joakim/workout_secret; /usr/bin/python3 /home/joakim/projects/Minimalist-Workout-Journal/server.py --secret $WORKOUT_SECRET -p 80
+ExecStart=. /home/joakim/workout_secret; /home/joakim/projects/Minimalist-Workout-Journal/server.py --secret $WORKOUT_SECRET -p 80
 Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+Alias=worklog.service
